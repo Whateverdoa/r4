@@ -16,6 +16,13 @@ A serverless platform for massive-scale Variable Data Printing (VDP) generation 
   - **Transform registry** (20+ transforms: EAN-13, SSCC-18, date formatting, etc.)
   - **Quantity expansion** and chunking for parallel workers
   - **Multi-template support** in single DataFrame
+- **Template Builder**: Easy template creation and management
+  - **Fluent API** for programmatic template building
+  - **Template library** with 12+ pre-built templates
+  - **JSON serialization** for saving/loading templates
+  - **Template registry** for organizing and discovering templates
+  - **Interactive CLI** builder for no-code template creation
+  - **Validation** and introspection tools
 - **Async Pipelines**: Orchestrate complex workflows
 - **Flexible Storage**: Modal Volumes, S3, or local storage
   - **Modal Storage** (recommended): Built-in Volumes and Dicts, no credentials needed
