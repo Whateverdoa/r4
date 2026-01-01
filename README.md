@@ -7,7 +7,10 @@ A serverless platform for massive-scale Variable Data Printing (VDP) generation 
 - **Massive Parallelization**: Scale from 40 to 4000+ workers instantly
 - **CPU-Heavy Prepress Tasks**: PyMuPDF, ReportLab, image processing
 - **Barcode Generation**: GS1-128, QR codes, and more
+  - **Raster barcodes**: PNG format using python-barcode
+  - **Vector barcodes**: SVG/EPS format using zint (professional printing)
 - **PDF Processing**: Parallel rendering, assembly, and validation
+- **Prepress Tools**: Ghostscript for CMYK conversion, PDF/X compliance
 - **Async Pipelines**: Orchestrate complex workflows
 - **Flexible Storage**: Modal Volumes, S3, or local storage
   - **Modal Storage** (recommended): Built-in Volumes and Dicts, no credentials needed
@@ -188,17 +191,26 @@ ruff src/
 mypy src/
 ```
 
+## Documentation
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
+- **[STORAGE_GUIDE.md](STORAGE_GUIDE.md)** - Complete storage documentation (Modal, S3, local)
+- **[VECTOR_BARCODES.md](VECTOR_BARCODES.md)** - Professional vector barcode generation with zint
+
 ## Roadmap
 
 - [x] Core VDP pipeline
-- [x] Barcode generation
+- [x] Barcode generation (raster + vector)
 - [x] PDF processing
+- [x] Modal storage (Volumes + Dicts)
 - [x] S3 integration
+- [x] Vector barcodes with zint
+- [x] Ghostscript for prepress
 - [ ] GPU-based AI agents
 - [ ] OCR and vision models
 - [ ] Real-time webhooks
 - [ ] Scheduled workers
-- [ ] Advanced prepress automation
+- [ ] Advanced color management (ICC profiles)
 
 ## License
 
@@ -208,3 +220,5 @@ MIT
 
 - [Modal Documentation](https://modal.com/docs)
 - [Modal Examples](https://modal.com/docs/examples)
+- [Zint Barcode Generator](https://zint.org.uk/)
+- [Ghostscript](https://www.ghostscript.com/)
