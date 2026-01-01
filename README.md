@@ -11,6 +11,11 @@ A serverless platform for massive-scale Variable Data Printing (VDP) generation 
   - **Vector barcodes**: SVG/EPS format using zint (professional printing)
 - **PDF Processing**: Parallel rendering, assembly, and validation
 - **Prepress Tools**: Ghostscript for CMYK conversion, PDF/X compliance
+- **DataFrame Ingestion**: Excel/CSV → VDP pipeline with Pydantic validation
+  - **Field mapping** with automatic column normalization
+  - **Transform registry** (20+ transforms: EAN-13, SSCC-18, date formatting, etc.)
+  - **Quantity expansion** and chunking for parallel workers
+  - **Multi-template support** in single DataFrame
 - **Async Pipelines**: Orchestrate complex workflows
 - **Flexible Storage**: Modal Volumes, S3, or local storage
   - **Modal Storage** (recommended): Built-in Volumes and Dicts, no credentials needed
