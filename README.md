@@ -9,7 +9,10 @@ A serverless platform for massive-scale Variable Data Printing (VDP) generation 
 - **Barcode Generation**: GS1-128, QR codes, and more
 - **PDF Processing**: Parallel rendering, assembly, and validation
 - **Async Pipelines**: Orchestrate complex workflows
-- **S3 Integration**: Seamless file storage and retrieval
+- **Flexible Storage**: Modal Volumes, S3, or local storage
+  - **Modal Storage** (recommended): Built-in Volumes and Dicts, no credentials needed
+  - **S3 Storage**: AWS integration for existing infrastructure
+  - **Local Storage**: Development and testing
 - **GPU-Ready**: Future support for AI agents (OCR, vision models, layout analysis)
 
 ## Use Cases
@@ -130,6 +133,37 @@ await pipeline.run(
     output_bucket="s3://my-bucket/output/"
 )
 ```
+
+### 4. Storage Options
+
+```python
+# Option 1: Modal Storage (recommended, no credentials needed)
+result = run_vdp_pipeline.remote(
+    records=data,
+    template=template,
+    job_id="job-001",
+    storage_backend="modal",  # Saves to Modal Volume
+)
+
+# Option 2: S3 Storage (for AWS integration)
+result = run_vdp_pipeline.remote(
+    records=data,
+    template=template,
+    job_id="job-002",
+    storage_backend="s3",
+    s3_bucket="my-bucket",
+)
+
+# Option 3: Local Storage (for testing)
+result = run_vdp_pipeline.remote(
+    records=data,
+    template=template,
+    job_id="job-003",
+    storage_backend="local",  # Returns bytes
+)
+```
+
+See [STORAGE_GUIDE.md](STORAGE_GUIDE.md) for detailed storage documentation.
 
 ## Performance
 
